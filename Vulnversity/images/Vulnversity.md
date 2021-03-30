@@ -9,7 +9,8 @@ titlepage-text-color: "FFFFFF"
 titlepage-color: "0c0d0e"
 toc: true
 toc-own-page: true
-...
+
+---
 
 # Vulnversity - Write-up
 
