@@ -21,23 +21,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+ 
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-        - name: Hugo setup
+        - name: Hugo Actions
   # You may pin to the exact commit or the version.
-  # uses: peaceiris/actions-hugo@2e89aa66d0093e4cd14751b3028fc1a179452c2e
-  uses: peaceiris/actions-hugo@v2.4.13
-  with:
-    # The Hugo version to download (if necessary) and use. Example: 0.58.2
-    hugo-version: # optional, default is latest
-    # Download (if necessary) and use Hugo extended version. Example: true
-    extended: # optional, default is false
-          echo Add other actions to build,
-          echo test, and deploy your project.
+  # uses: srt32/hugo-action@45dd72ab904158d21657b29c5aa67007a8fcdaba
+          uses: srt32/hugo-action@v0.0.3
