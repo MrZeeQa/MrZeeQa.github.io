@@ -2,12 +2,9 @@
 title: "Try Hack Me - Vulnversity"
 author: Nicolas Bouquiaux
 date: "2021-03-30"
-<<<<<<< HEAD
 subject: "Notes CTF-challenge"
-=======
 subject: "Markdown"
 keywords: [Markdown, Example]
->>>>>>> 46631b2e1513fc252a4c41d5c9cbcf152bc449bd
 titlepage: true
 titlepage-text-color: "FFFFFF"
 titlepage-color: "0c0d0e"
@@ -48,7 +45,7 @@ Het is absurd dat de webserver draait op poort 3333. Het blijkt ook dat een prox
 
 De site blijkt een van een universiteit te zijn
 
-![alt text](images/vulnversity-webenum.png)
+![alt text](./images/vulnversity-webenum.png)
 
 
 ## Locating directories
@@ -100,7 +97,7 @@ Er blijkt maar één verborgen folder te zijn, namelijk 'internal'
 
 Bij de enumeration kom je terecht op een pagina waar je bestanden kan uploaden.
 
-![alt text](images/vulnversity-internalenum.png)
+![alt text](./images/vulnversity-internalenum.png)
 
 
 ## Getting a shell
@@ -108,7 +105,7 @@ Bij de enumeration kom je terecht op een pagina waar je bestanden kan uploaden.
 
 Nu moeten we een revershe shell krijgen door een .php bestand te uploaden. Het blokkeert bestanden met de .php-extensie dus moeten we het als .phtml uploaden.
 
-![alt text](images/vulnversity-succes.png)
+![alt text](./images/vulnversity-succes.png)
 
 
 Nu we een shell-connectie hebben, moeten we een manier zien te vinden om onze privilege escalaten.
